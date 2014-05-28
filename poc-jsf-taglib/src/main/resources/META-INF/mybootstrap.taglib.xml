@@ -1,0 +1,18 @@
+<facelet-taglib version="2.0"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-facelettaglibrary_2_0.xsd">
+	<namespace>http://www.jobjects.org/mbs</namespace>
+	<!-- <composite-library-name>mybootstrap</composite-library-name>  -->
+	<tag>
+		<tag-name>mytag</tag-name>
+		<component>
+			<component-type>org.jobjects.ihm.tag.TotoComposantType</component-type>
+		</component>
+		<attribute>
+			<name>msg</name>
+			<required>true</required>
+            <type>java.lang.String</type>
+		</attribute>
+	</tag>
+</facelet-taglib>

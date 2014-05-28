@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:c="http://java.sun.com/jsf/core"
+	  xmlns:bs="http://java.sun.com/jsf/composite/panel">
+<h:head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="Refresh" content="#{session.maxInactiveInterval};url=index.xhtml?reason=expired" />
+  <title><h:outputText value="#{msg['title']}" /></title>
+  <h:outputStylesheet library="css" name="bootstrap.css" />
+  <h:outputScript library="js" name="jquery-1.10.2.js" target="head"/>
+  <h:outputScript library="js" name="bootstrap.js" target="head"/>
+</h:head>
+<h:body>
+persons
+</h:body>
+</html>

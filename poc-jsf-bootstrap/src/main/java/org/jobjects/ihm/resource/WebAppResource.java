@@ -25,7 +25,7 @@ public class WebAppResource extends ResourceWrapper {
     String returnValue=null;
     FacesContext context = FacesContext.getCurrentInstance();
     returnValue=context.getApplication().getViewHandler().getResourceURL(context, path);
-    //log.log(Level.INFO, "WebAppResource#getRequestPath : "+ returnValue);
+    log.log(Level.FINEST, "WebAppResource#getRequestPath : "+ returnValue);
     return returnValue;
   }
 

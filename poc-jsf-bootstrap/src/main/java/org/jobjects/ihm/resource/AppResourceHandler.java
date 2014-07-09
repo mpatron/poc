@@ -11,7 +11,6 @@ import javax.faces.application.ResourceHandlerWrapper;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 /*
  * http://roguexz.blogspot.fr/2013/10/jsf-2-returning-resource-url-that-is.html

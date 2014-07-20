@@ -1,0 +1,169 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.jobjects.wsserver</groupId>
+	<artifactId>ExempleWSServer</artifactId>
+	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>ExempleWSServer Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>Cp1252</project.build.sourceEncoding>
+		<wsdlRepertoireDest>${project.build.directory}/wsdl</wsdlRepertoireDest>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- <dependency> <groupId>com.sun.xml.ws</groupId> <artifactId>jaxws-rt</artifactId> 
+			<version>2.2.8</version> <scope>compile</scope> </dependency> -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>6.0</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.jvnet.jax-ws-commons</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>2.3</version>
+				<executions>
+					<execution>
+						<id>pasbesoindidcafaittout</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>wsgen</goal>
+						</goals>
+						<configuration>
+							<!-- ACHTUNG pas d'espace dans les chemins sinon ça bug. -->
+							<destDir>${project.build.outputDirectory}</destDir>
+							<sourceDestDir>${project.build.directory}/generated-sources/wsgen</sourceDestDir>
+							<!-- On génère les wsdl, ils seront utiles pour le client. -->
+							<genWsdl>true</genWsdl>
+							<!-- Verbose pour voir ce qu'il se passe. -->
+							<verbose>true</verbose>
+							<!-- On garde tout, il y a mvn clean pour netoyer. -->
+							<keep>true</keep>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.jvnet.jax-ws-commons</groupId>
+										<artifactId>jaxws-maven-plugin</artifactId>
+										<versionRange>[2.3,)</versionRange>
+										<goals>
+											<goal>wsgen</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+
+	<profiles>
+		<profile>
+			<!-- https://jax-ws-commons.java.net/jaxws-maven-plugin/examples/using-jaxws22-on-jdk6.html -->
+			<id>jdk7</id>
+			<activation>
+				<!-- needed only on JDK 7 -->
+				<jdk>1.7</jdk>
+			</activation>
+			<properties>
+				<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<version>2.3</version>
+						<executions>
+							<execution>
+								<phase>validate</phase>
+								<goals>
+									<goal>copy</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>${endorsed.dir}</outputDirectory>
+									<silent>true</silent>
+									<!-- need JAXB API and JAX-WS API in an endorsed dir -->
+									<artifactItems>
+										<artifactItem>
+											<groupId>javax.xml.bind</groupId>
+											<artifactId>jaxb-api</artifactId>
+											<version>2.2.7</version>
+											<type>jar</type>
+										</artifactItem>
+										<artifactItem>
+											<groupId>javax.xml.ws</groupId>
+											<artifactId>jaxws-api</artifactId>
+											<version>2.2.9</version>
+											<type>jar</type>
+										</artifactItem>
+									</artifactItems>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>2.3.2</version>
+						<configuration>
+							<source>1.7</source>
+							<target>1.7</target>
+							<compilerArguments>
+								<!-- tell compiler to use endorsed dir -->
+								<endorseddirs>${endorsed.dir}</endorseddirs>
+							</compilerArguments>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+	</profiles>
+
+</project>

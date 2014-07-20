@@ -8,4 +8,8 @@
     <component-type>org.jobjects.ihm.tag.TotoComposantType</component-type>
     <component-class>org.jobjects.ihm.tag.TotoComposantType</component-class>
   </component>
+  <component>
+    <component-type>ihm_tag_Panel</component-type>
+    <component-class>org.jobjects.ihm.tag.Panel</component-class>
+  </component>
 </faces-config>

@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html lang="en"
-	xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:c="http://java.sun.com/jsf/core"
-	  xmlns:bs="http://java.sun.com/jsf/composite/panel"
-	  xmlns:mbs="http://www.jobjects.org/mbs"
-	  >
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsf/core"
+	xmlns:bs="http://java.sun.com/jsf/composite/panel"
+	xmlns:mbs="http://www.jobjects.org/mbs">
 <h:head>
-  <meta charset="UTF-8"/>
-  <meta http-equiv="refresh" content="#{session.maxInactiveInterval};url=index.xhtml?reason=expired" />
-  <title><h:outputText value="#{msg['title']}" /></title>
-  <!-- <h:outputStylesheet library="css" name="bootstrap.css" />  -->
-  <h:outputStylesheet library="css" name="bootstrap-amelia.css" />
-  <!--  <h:outputStylesheet library="css" name="bootstrap-ubuntu.css" />  -->  
-  <h:outputScript library="js" name="jquery-1.10.2.js" target="head"/>
-  <h:outputScript library="js" name="bootstrap.js" target="head"/>
-  <h:outputScript library="js" name="modernizr-2.7.1.js" target="head"/>
+	<meta charset="UTF-8" />
+	<meta http-equiv="refresh"
+		content="#{session.maxInactiveInterval};url=index.xhtml?reason=expired" />
+	<title><h:outputText value="#{msg['title']}" /></title>
+	<!-- <h:outputStylesheet library="css" name="bootstrap.css" />  -->
+	<h:outputStylesheet library="css" name="bootstrap-amelia.css" />
+	<!--  <h:outputStylesheet library="css" name="bootstrap-ubuntu.css" />  -->
+	<h:outputScript library="js" name="jquery-1.10.2.js" target="head" />
+	<h:outputScript library="js" name="bootstrap.js" target="head" />
+	<h:outputScript library="js" name="modernizr-2.7.1.js" target="head" />
 </h:head>
 <h:body>
 
@@ -66,143 +65,235 @@
 
 
 	<div class="container">
-			<div class="page-header">
-			  <h1>Example page header <small>Subtext for header</small></h1>
+		<div class="page-header">
+			<h1>
+				Example page header <small>Subtext for header</small>
+			</h1>
+		</div>
+
+
+		<div class="row">
+
+
+			<div class="col-lg-6 offset-4">
+
+				<div class="well bs-component">
+					<form class="form-horizontal">
+						<fieldset>
+							<legend>Legend</legend>
+							<div class="form-group">
+								<label for="inputEmail" class="col-lg-2 control-label">Email</label>
+								<div class="col-lg-10">
+									<input class="form-control" id="inputEmail" placeholder="Email"
+										type="text"></input>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputPassword" class="col-lg-2 control-label">Password</label>
+								<div class="col-lg-10">
+									<input class="form-control" id="inputPassword"
+										placeholder="Password" type="password"></input>
+									<div class="checkbox">
+										<label> <input type="checkbox" />Checkbox
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="textArea" class="col-lg-2 control-label">Textarea</label>
+								<div class="col-lg-10">
+									<textarea class="form-control" rows="3" id="textArea"></textarea>
+									<span class="help-block">A longer block of help text
+										that breaks onto a new line and may extend beyond one line.</span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-lg-2 control-label">Radios</label>
+								<div class="col-lg-10">
+									<div class="radio">
+										<label> <input name="optionsRadios"
+											id="optionsRadios1" value="option1" checked="checked"
+											type="radio" />Option one is this
+										</label>
+									</div>
+									<div class="radio">
+										<label> <input name="optionsRadios"
+											id="optionsRadios2" value="option2" type="radio" />Option two
+											can be something else
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="select" class="col-lg-2 control-label">Selects</label>
+								<div class="col-lg-10">
+									<select class="form-control" id="select">
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+									</select> <br /> <select multiple="multiple" class="form-control">
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-lg-10 col-lg-offset-2">
+									<button class="btn btn-default">Cancel</button>
+									<button type="submit" class="btn btn-primary">Submit</button>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+
 			</div>
+			<!-- colonne 8 -->
+		</div>
+		<!-- row -->
 
 
-<div class="row">
+		<!-- Example row of columns -->
+		<div class="row">
+			<div class="col-lg-2">
+				<h2>Heading</h2>
+				<p>
+					<span class="glyphicon glyphicon-adjust"></span> <span
+						class="glyphicon glyphicon-user"></span> http://bootswatch.com/
+					Content of the document......
+				</p>
+				<bs:panels titleValue="mon Titre">
+					<p>
+						<mbs:mytag msg="Toto">Titi</mbs:mytag>
+					</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Integer sodales leo eu commodo ultricies. Donec porttitor
+						condimentum convallis. Etiam a lacinia ipsum. Donec at bibendum
+						justo. Cras eleifend purus pulvinar, rutrum metus ut, volutpat
+						justo. Praesent dictum luctus ante, a condimentum ipsum dignissim
+						non. Aenean id urna convallis, mattis leo at, iaculis mi. Morbi
+						lobortis metus ac vulputate interdum. Mauris at sagittis eros.
+						Mauris et congue augue, lobortis faucibus tellus. Suspendisse id
+						facilisis est.</p>
+					<p>Donec ac turpis sit amet orci lobortis pulvinar id eu justo.
+						Mauris scelerisque ornare sem, ut varius sapien hendrerit at. Sed
+						felis quam, hendrerit in tristique eget, consequat at velit. In
+						non vulputate urna. Quisque vel lacus mi. Integer vitae commodo
+						erat. Donec tempor, leo vitae tincidunt commodo, quam eros
+						ullamcorper sapien, pretium bibendum ligula urna a erat. Proin
+						suscipit urna et orci convallis faucibus. Vivamus vel convallis
+						tellus, a eleifend magna. Donec tincidunt dui ut quam aliquam
+						eleifend.</p>
+					<p>Quisque metus dolor, venenatis dignissim neque a, vulputate
+						aliquam mauris. Maecenas gravida quis elit quis aliquet. Donec
+						congue, nisl non consectetur viverra, ante nunc rhoncus enim, nec
+						suscipit risus lacus id enim. Aenean ut dui nisi. Vivamus commodo
+						facilisis neque a ultricies. Morbi ultrices interdum blandit. Ut
+						in tempus ipsum.</p>
+					<p>Sed ultrices malesuada lectus non interdum. Nullam viverra
+						orci scelerisque blandit pulvinar. Vestibulum ante ipsum primis in
+						faucibus orci luctus et ultrices posuere cubilia Curae; Nulla
+						auctor, massa et ultricies viverra, nibh erat pretium tortor, sed
+						semper mi neque vitae felis. Nunc bibendum risus diam, fringilla
+						adipiscing sapien cursus a. Class aptent taciti sociosqu ad litora
+						torquent per conubia nostra, per inceptos himenaeos. Sed rhoncus a
+						sem ac semper. Duis massa est, imperdiet a libero in, vehicula
+						facilisis nunc. Donec pharetra pharetra lorem sed eleifend. Donec
+						eget ultrices enim. Fusce ut augue sit amet urna blandit placerat
+						vel lacinia urna. Aenean congue tellus et viverra adipiscing. Sed
+						dignissim augue pharetra laoreet facilisis. Nulla facilisi.</p>
+					<p>Nulla vel diam id neque commodo scelerisque ac a ligula.
+						Nulla feugiat diam ut tempus dapibus. Aliquam egestas nunc non
+						ante mollis rhoncus. Suspendisse elementum aliquam leo, ac egestas
+						leo luctus eu. Curabitur mattis nisl sed elit porttitor tincidunt.
+						Suspendisse mattis rutrum enim eu fermentum. Duis cursus quam
+						consequat libero fringilla, non molestie erat faucibus. Praesent
+						auctor, nunc at condimentum adipiscing, purus quam fringilla
+						purus, ut semper libero lacus sed eros. Praesent sit amet arcu ut
+						dolor semper tempus. Cras vitae dignissim magna. Praesent quis
+						lorem varius, interdum ligula ut, molestie metus.</p>
+				</bs:panels>
 
+			</div>
+			<div class="col-lg-6">
+<mbs:panel title="&lt;i class=&quot;glyphicon glyphicon-sort-by-alphabet&quot;&gt;&lt;/i&gt;Lorem ipsum" look="primary">
+<mbs:mytag msg="Toto">Titi</mbs:mytag>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							Integer sodales leo eu commodo ultricies. Donec porttitor
+							condimentum convallis. Etiam a lacinia ipsum. Donec at bibendum
+							justo. Cras eleifend purus pulvinar, rutrum metus ut, volutpat
+							justo. Praesent dictum luctus ante, a condimentum ipsum dignissim
+							non. Aenean id urna convallis, mattis leo at, iaculis mi. Morbi
+							lobortis metus ac vulputate interdum. Mauris at sagittis eros.
+							Mauris et congue augue, lobortis faucibus tellus. Suspendisse id
+							facilisis est.</p>
+							<i class="glyphicon glyphicon-sort-by-alphabet"></i>
+						<p>Donec ac turpis sit amet orci lobortis pulvinar id eu
+							justo. Mauris scelerisque ornare sem, ut varius sapien hendrerit
+							at. Sed felis quam, hendrerit in tristique eget, consequat at
+							velit. In non vulputate urna. Quisque vel lacus mi. Integer vitae
+							commodo erat. Donec tempor, leo vitae tincidunt commodo, quam
+							eros ullamcorper sapien, pretium bibendum ligula urna a erat.
+							Proin suscipit urna et orci convallis faucibus. Vivamus vel
+							convallis tellus, a eleifend magna. Donec tincidunt dui ut quam
+							aliquam eleifend.</p>
+						<p>Quisque metus dolor, venenatis dignissim neque a, vulputate
+							aliquam mauris. Maecenas gravida quis elit quis aliquet. Donec
+							congue, nisl non consectetur viverra, ante nunc rhoncus enim, nec
+							suscipit risus lacus id enim. Aenean ut dui nisi. Vivamus commodo
+							facilisis neque a ultricies. Morbi ultrices interdum blandit. Ut
+							in tempus ipsum.</p>
+						<p>Sed ultrices malesuada lectus non interdum. Nullam viverra
+							orci scelerisque blandit pulvinar. Vestibulum ante ipsum primis
+							in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla
+							auctor, massa et ultricies viverra, nibh erat pretium tortor, sed
+							semper mi neque vitae felis. Nunc bibendum risus diam, fringilla
+							adipiscing sapien cursus a. Class aptent taciti sociosqu ad
+							litora torquent per conubia nostra, per inceptos himenaeos. Sed
+							rhoncus a sem ac semper. Duis massa est, imperdiet a libero in,
+							vehicula facilisis nunc. Donec pharetra pharetra lorem sed
+							eleifend. Donec eget ultrices enim. Fusce ut augue sit amet urna
+							blandit placerat vel lacinia urna. Aenean congue tellus et
+							viverra adipiscing. Sed dignissim augue pharetra laoreet
+							facilisis. Nulla facilisi.</p>
+						<p>Nulla vel diam id neque commodo scelerisque ac a ligula.
+							Nulla feugiat diam ut tempus dapibus. Aliquam egestas nunc non
+							ante mollis rhoncus. Suspendisse elementum aliquam leo, ac
+							egestas leo luctus eu. Curabitur mattis nisl sed elit porttitor
+							tincidunt. Suspendisse mattis rutrum enim eu fermentum. Duis
+							cursus quam consequat libero fringilla, non molestie erat
+							faucibus. Praesent auctor, nunc at condimentum adipiscing, purus
+							quam fringilla purus, ut semper libero lacus sed eros. Praesent
+							sit amet arcu ut dolor semper tempus. Cras vitae dignissim magna.
+							Praesent quis lorem varius, interdum ligula ut, molestie metus.</p>
+</mbs:panel>
+			</div>
+			<div class="col-lg-4">
+				<h2>Heading</h2>
+				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
+					egestas eget quam. Vestibulum id ligula porta felis euismod semper.
+					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+					nibh, ut fermentum massa justo sit amet risus.</p>
+				<p>
+					<a class="btn btn-default" href="#">View details &#187;</a>
+				</p>
+			</div>
+		</div>
 
-        <div class="col-lg-6 offset-4">
-
-<div class="well bs-component">
-<form class="form-horizontal">
-  <fieldset>
-    <legend>Legend</legend>
-    <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-      <div class="col-lg-10">
-        <input class="form-control" id="inputEmail" placeholder="Email" type="text"></input>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-      <div class="col-lg-10">
-        <input class="form-control" id="inputPassword" placeholder="Password" type="password"></input>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"/>Checkbox
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="textArea" class="col-lg-2 control-label">Textarea</label>
-      <div class="col-lg-10">
-        <textarea class="form-control" rows="3" id="textArea"></textarea>
-        <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-lg-2 control-label">Radios</label>
-      <div class="col-lg-10">
-        <div class="radio">
-          <label>
-            <input name="optionsRadios" id="optionsRadios1" value="option1" checked="checked" type="radio"/>Option one is this
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input name="optionsRadios" id="optionsRadios2" value="option2" type="radio"/>Option two can be something else
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="select" class="col-lg-2 control-label">Selects</label>
-      <div class="col-lg-10">
-        <select class="form-control" id="select">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-        <br/>
-        <select multiple="multiple" class="form-control">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-lg-10 col-lg-offset-2">
-        <button class="btn btn-default">Cancel</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
-  </fieldset>
-</form>
-</div>
-
-		</div><!-- colonne 8 -->
-      </div><!-- row -->
-
-
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-lg-2">
-          <h2>Heading</h2>
-          <p>
-<span class="glyphicon glyphicon-adjust"></span>
-<span class="glyphicon glyphicon-user"></span>
-http://bootswatch.com/
-Content of the document......
-          </p>
-<bs:panels titleValue="mon Titre">
-	<p><mbs:mytag msg="Toto">Titi</mbs:mytag></p>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales leo eu commodo ultricies. Donec porttitor condimentum convallis. Etiam a lacinia ipsum. Donec at bibendum justo. Cras eleifend purus pulvinar, rutrum metus ut, volutpat justo. Praesent dictum luctus ante, a condimentum ipsum dignissim non. Aenean id urna convallis, mattis leo at, iaculis mi. Morbi lobortis metus ac vulputate interdum. Mauris at sagittis eros. Mauris et congue augue, lobortis faucibus tellus. Suspendisse id facilisis est.</p>
-	<p>Donec ac turpis sit amet orci lobortis pulvinar id eu justo. Mauris scelerisque ornare sem, ut varius sapien hendrerit at. Sed felis quam, hendrerit in tristique eget, consequat at velit. In non vulputate urna. Quisque vel lacus mi. Integer vitae commodo erat. Donec tempor, leo vitae tincidunt commodo, quam eros ullamcorper sapien, pretium bibendum ligula urna a erat. Proin suscipit urna et orci convallis faucibus. Vivamus vel convallis tellus, a eleifend magna. Donec tincidunt dui ut quam aliquam eleifend.</p>
-	<p>Quisque metus dolor, venenatis dignissim neque a, vulputate aliquam mauris. Maecenas gravida quis elit quis aliquet. Donec congue, nisl non consectetur viverra, ante nunc rhoncus enim, nec suscipit risus lacus id enim. Aenean ut dui nisi. Vivamus commodo facilisis neque a ultricies. Morbi ultrices interdum blandit. Ut in tempus ipsum.</p>
-	<p>Sed ultrices malesuada lectus non interdum. Nullam viverra orci scelerisque blandit pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla auctor, massa et ultricies viverra, nibh erat pretium tortor, sed semper mi neque vitae felis. Nunc bibendum risus diam, fringilla adipiscing sapien cursus a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed rhoncus a sem ac semper. Duis massa est, imperdiet a libero in, vehicula facilisis nunc. Donec pharetra pharetra lorem sed eleifend. Donec eget ultrices enim. Fusce ut augue sit amet urna blandit placerat vel lacinia urna. Aenean congue tellus et viverra adipiscing. Sed dignissim augue pharetra laoreet facilisis. Nulla facilisi.</p>
-	<p>Nulla vel diam id neque commodo scelerisque ac a ligula. Nulla feugiat diam ut tempus dapibus. Aliquam egestas nunc non ante mollis rhoncus. Suspendisse elementum aliquam leo, ac egestas leo luctus eu. Curabitur mattis nisl sed elit porttitor tincidunt. Suspendisse mattis rutrum enim eu fermentum. Duis cursus quam consequat libero fringilla, non molestie erat faucibus. Praesent auctor, nunc at condimentum adipiscing, purus quam fringilla purus, ut semper libero lacus sed eros. Praesent sit amet arcu ut dolor semper tempus. Cras vitae dignissim magna. Praesent quis lorem varius, interdum ligula ut, molestie metus.</p>
-</bs:panels>
-
-        </div>
-        <div class="col-lg-6">
-        
-            <div class="panel panel-primary">
-              <div class="panel-heading">
-                <h3 class="panel-title"> <i class="glyphicon glyphicon-sort-by-alphabet"></i> Traffic Statistics: October 1, 2013 - October 31, 2013</h3>
-              </div>
-              <div class="panel-body">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sodales leo eu commodo ultricies. Donec porttitor condimentum convallis. Etiam a lacinia ipsum. Donec at bibendum justo. Cras eleifend purus pulvinar, rutrum metus ut, volutpat justo. Praesent dictum luctus ante, a condimentum ipsum dignissim non. Aenean id urna convallis, mattis leo at, iaculis mi. Morbi lobortis metus ac vulputate interdum. Mauris at sagittis eros. Mauris et congue augue, lobortis faucibus tellus. Suspendisse id facilisis est.</p>
-<p>Donec ac turpis sit amet orci lobortis pulvinar id eu justo. Mauris scelerisque ornare sem, ut varius sapien hendrerit at. Sed felis quam, hendrerit in tristique eget, consequat at velit. In non vulputate urna. Quisque vel lacus mi. Integer vitae commodo erat. Donec tempor, leo vitae tincidunt commodo, quam eros ullamcorper sapien, pretium bibendum ligula urna a erat. Proin suscipit urna et orci convallis faucibus. Vivamus vel convallis tellus, a eleifend magna. Donec tincidunt dui ut quam aliquam eleifend.</p>
-<p>Quisque metus dolor, venenatis dignissim neque a, vulputate aliquam mauris. Maecenas gravida quis elit quis aliquet. Donec congue, nisl non consectetur viverra, ante nunc rhoncus enim, nec suscipit risus lacus id enim. Aenean ut dui nisi. Vivamus commodo facilisis neque a ultricies. Morbi ultrices interdum blandit. Ut in tempus ipsum.</p>
-<p>Sed ultrices malesuada lectus non interdum. Nullam viverra orci scelerisque blandit pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla auctor, massa et ultricies viverra, nibh erat pretium tortor, sed semper mi neque vitae felis. Nunc bibendum risus diam, fringilla adipiscing sapien cursus a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed rhoncus a sem ac semper. Duis massa est, imperdiet a libero in, vehicula facilisis nunc. Donec pharetra pharetra lorem sed eleifend. Donec eget ultrices enim. Fusce ut augue sit amet urna blandit placerat vel lacinia urna. Aenean congue tellus et viverra adipiscing. Sed dignissim augue pharetra laoreet facilisis. Nulla facilisi.</p>
-<p>Nulla vel diam id neque commodo scelerisque ac a ligula. Nulla feugiat diam ut tempus dapibus. Aliquam egestas nunc non ante mollis rhoncus. Suspendisse elementum aliquam leo, ac egestas leo luctus eu. Curabitur mattis nisl sed elit porttitor tincidunt. Suspendisse mattis rutrum enim eu fermentum. Duis cursus quam consequat libero fringilla, non molestie erat faucibus. Praesent auctor, nunc at condimentum adipiscing, purus quam fringilla purus, ut semper libero lacus sed eros. Praesent sit amet arcu ut dolor semper tempus. Cras vitae dignissim magna. Praesent quis lorem varius, interdum ligula ut, molestie metus.</p>               
-</div>
-            </div>
-       </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#">View details &#187;</a></p>
-        </div>
-      </div>
-
-      <hr/>
+		<hr />
 
 		<bs:footer />
 
-      <footer>
-        <p>Copyright &#169; 2012-2013 Mickaël Patron</p>
-      </footer>
-    </div> <!-- /container -->
+		<footer>
+			<p>Copyright &#169; 2012-2013 Mickaël Patron</p>
+		</footer>
+	</div>
+	<!-- /container -->
 
 
 </h:body>

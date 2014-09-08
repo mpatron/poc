@@ -1,7 +1,0 @@
-<bindings xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-	wsdlLocation="file:/C:/Users/Mickael/Documents/java/WebServiceWithMaven/ExempleWSServer/target/wsdl/AdditionWSService.wsdl"
-	xmlns="http://java.sun.com/xml/ns/jaxws" xmlns:tns="http://www.jobjects.org/ws/">
-	<package name="org.jobjects.proxy" />
-	<enableWrapperStyle>true</enableWrapperStyle>
-	<enableAsyncMapping>false</enableAsyncMapping>
-</bindings>

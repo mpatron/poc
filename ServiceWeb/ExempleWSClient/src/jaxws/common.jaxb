@@ -1,0 +1,14 @@
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" version="2.1">
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.jobjects.org/ws/exception">
+    <schemaBindings>
+      <package name="org.jobjects.proxy.common" />
+    </schemaBindings>
+  </bindings>
+  <!--
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.jobjects.org/ws">
+    <schemaBindings>
+      <package name="org.jobjects.proxy" />
+    </schemaBindings>
+  </bindings>
+  -->
+</bindings>
